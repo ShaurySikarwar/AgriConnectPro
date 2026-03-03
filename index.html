@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AgriConnect Pro</title>
+
+<style>
+:root{
+  --green:#4caf50;
+}
+
+/* GLOBAL RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Segoe UI,sans-serif;
+  scroll-behavior:smooth;
+}
+
+body{
+  color:#fff;
+  position:relative;
+}
+
+/* ================= BACKGROUND VIDEO ================= */
+.background-video{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:-2;
+}
+
+/* Global dark overlay */
+.background-overlay{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.55);
+  z-index:-1;
+}
+
+/* ================= NAVBAR ================= */
+.navbar{
+  position:fixed;
+  top:0;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 50px;
+  background:rgba(0,0,0,0.7);
+  backdrop-filter:blur(8px);
+  z-index:1000;
+}
+
+.navbar .logo{
+  font-weight:bold;
+}
+
+.navbar ul{
+  list-style:none;
+  display:flex;
+  gap:25px;
+}
+
+.navbar a{
+  text-decoration:none;
+  color:#fff;
+  transition:0.3s;
+}
+
+.navbar a:hover{
+  color:var(--green);
+}
+
+/* ================= HERO ================= */
+.hero{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+}
+
+.hero h1{
+  font-size:3rem;
+  margin-bottom:15px;
+}
+
+.hero p{
+  max-width:600px;
+  margin:auto;
+}
+
+/* ================= ENQUIRY SECTION ================= */
+.enquiry-section{
+  padding:120px 20px;
+  background:#f4f7f2;   /* solid background */
+  color:#333;
+}
+
+.enquiry-container{
+  max-width:1100px;
+  margin:auto;
+  display:flex;
+  justify-content:center;
+}
+
+.enquiry-content{
+  background:#ffffff;
+  padding:40px;
+  border-radius:25px;
+  width:520px;
+  box-shadow:0 20px 50px rgba(0,0,0,0.2);
+}
+
+.enquiry-content h2{
+  margin-bottom:20px;
+  text-align:center;
+}
+
+.enquiry-form .row{
+  display:flex;
+  gap:15px;
+  margin-bottom:15px;
+}
+
+.enquiry-form input,
+.enquiry-form select,
+.enquiry-form textarea{
+  flex:1;
+  padding:12px 18px;
+  border-radius:30px;
+  border:1px solid #ccc;
+  outline:none;
+}
+
+.enquiry-form textarea{
+  border-radius:20px;
+  height:90px;
+  resize:none;
+}
+
+.enquiry-btn{
+  background:var(--green);
+  color:#fff;
+  border:none;
+  padding:14px;
+  border-radius:12px;
+  font-weight:600;
+  cursor:pointer;
+  width:100%;
+  transition:0.3s;
+}
+
+.enquiry-btn:hover{
+  background:#388e3c;
+}
+
+/* ================= VISION ================= */
+.vision{
+  padding:120px 20px;
+  text-align:center;
+}
+
+.vision h2{
+  margin-bottom:15px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:768px){
+
+  .navbar{
+    flex-direction:column;
+    padding:15px 20px;
+  }
+
+  .enquiry-content{
+    width:100%;
+  }
+
+  .enquiry-form .row{
+    flex-direction:column;
+  }
+
+  .hero h1{
+    font-size:2rem;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- BACKGROUND VIDEO -->
+<video autoplay muted loop playsinline class="background-video">
+  <source src="https://www.pexels.com/download/video/3616640/" type="video/mp4">
+</video>
+<div class="background-overlay"></div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo">AgriConnect Pro</div>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#enquiry">Enquiry</a></li>
+    <li><a href="#vision">Vision</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div>
+    <h1>AgriConnect Pro</h1>
+    <p>Empowering farmers with fair prices, smart tools & direct market access</p>
+  </div>
+</section>
+
+<!-- ENQUIRY -->
+<section class="enquiry-section" id="enquiry">
+  <div class="enquiry-container">
+    <div class="enquiry-content">
+
+      <h2>Get in Touch</h2>
+
+      <form class="enquiry-form">
+        <div class="row">
+          <input type="text" placeholder="Name*" required>
+          <input type="email" placeholder="Email*" required>
+        </div>
+
+        <div class="row">
+          <select required>
+            <option value="">Project Type*</option>
+            <option>Crop Selling</option>
+            <option>Buy Accessories</option>
+            <option>Machine Resale</option>
+          </select>
+
+          <textarea placeholder="Message*" required></textarea>
+        </div>
+
+        <div class="row">
+          <select required>
+            <option value="">Select Your Budget*</option>
+            <option>Below ₹10,000</option>
+            <option>₹10,000 - ₹50,000</option>
+            <option>Above ₹50,000</option>
+          </select>
+        </div>
+
+        <button type="submit" class="enquiry-btn">
+          Submit 
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+</section>
+
+<!-- VISION -->
+<section class="vision" id="vision">
+  <h2>Our Vision</h2>
+  <p>
+  At AgriConnect Pro, our vision is to transform the agricultural ecosystem by creating a transparent and technology-driven marketplace for farmers.
+We aim to eliminate the dependency on middlemen by enabling direct connections between farmers and buyers.
+Our goal is to ensure fair pricing through real-time market insights and accurate data access.
+We strive to provide farmers with financial support and digital tools that promote informed decision-making.
+Ultimately, we envision a future where every farmer achieves economic independence, stability, and sustainable growth.
+  </p>
+</section>
+
+</body>
+</html>
